@@ -6,4 +6,12 @@ export class BACKPACK {
     male: /^\s*male_names = \{(\n|\r|.)*?\}/gm,
     female: /^\s*female_names = \{(\n|\r|.)*?\}/gm,
   };
+  static nameFile = {
+    holo: BACKPACK.projPath + "\\Holo.txt",
+    taiwan: BACKPACK.projPath + "\\台灣地名.txt",
+    adj: BACKPACK.projPath + "\\感嘆.txt",
+    element: BACKPACK.projPath + "\\element.txt",
+    astro: BACKPACK.projPath + "\\astro.txt",
+    job: BACKPACK.projPath + "\\job.txt",
+  };
 }

@@ -14,7 +14,7 @@ function overrideCK3file(rootPath: string, maleNameList: string[], femaleNameLis
   });
 }
 function replaceText(content: string, allNameList: string[], gender: "male" | "female") {
-  let replaceString = allNameList.join(" ");
+  let replaceString = allNameList.join("\n");
   if (gender === "male") {
     replaceString = "male_names = {\n" + replaceString + "}";
     content = content.replace(bp.regex.male, replaceString);
@@ -25,7 +25,7 @@ function replaceText(content: string, allNameList: string[], gender: "male" | "f
   return content;
 }
 
-const namePathList = [`${bp.projPath}\\name1.txt`, `${bp.projPath}\\name2.txt`];
+const namePathList = [bp.nameFile.astro, bp.nameFile.element, bp.nameFile.job];
 const allName = generateNames(namePathList);
 overrideCK3file(bp.ck3Path, allName, allName);
 console.log(`正在測試 ...`);
